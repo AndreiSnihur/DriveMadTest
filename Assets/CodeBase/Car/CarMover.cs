@@ -12,7 +12,10 @@ namespace CodeBase.Car
         [SerializeField] private Wheel rearWheel;
 
         public float DriveInput { get; set; }
-        private Vector3 Forward => 
+
+        public Rigidbody Chassis => chassis;
+
+        private Vector3 Forward =>
             -chassis.transform.forward;
 
         private void Awake() => 

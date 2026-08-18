@@ -135,11 +135,12 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b83d7a9b3c9640a2a6689b68e1b21452, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.CarWheel
+  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.Wheel
   body: {fileID: 71793200656151278}
   tyre: {fileID: 8518947862210019750}
   hinge: {fileID: 42469935759372618}
   suspension: {fileID: 0}
+  loosePrefab: {fileID: 6019283746501928376, guid: 9e2f7a1c4b3d4e5f8a6b7c8d9e0f1a2b, type: 3}
 --- !u!1001 &6332937687090431797
 PrefabInstance:
   m_ObjectHideFlags: 0

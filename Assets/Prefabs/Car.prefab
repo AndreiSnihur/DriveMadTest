@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4203582339050367200}
   - component: {fileID: 9014725836190273645}
+  - component: {fileID: 3170462859173026584}
   m_Layer: 7
   m_Name: Car
   m_TagString: Untagged
@@ -53,6 +54,24 @@ MonoBehaviour:
   chassis: {fileID: 1828940512666948549}
   frontWheel: {fileID: 7710293846152037449}
   rearWheel: {fileID: 1938475620193847562}
+--- !u!114 &3170462859173026584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676470710234829114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9291fc6e54f47f4b281badfdda5c424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.CarDetacher
+  mover: {fileID: 9014725836190273645}
+  frontWheel: {fileID: 7710293846152037449}
+  rearWheel: {fileID: 1938475620193847562}
+  debrisLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1001 &570001582758419006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,7 +147,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b83d7a9b3c9640a2a6689b68e1b21452, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.CarWheel
+  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.Wheel
 --- !u!4 &7889266720522512827 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7680118557601428357, guid: d29b46c218be83547aee25f3af730d8b, type: 3}
@@ -209,7 +228,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b83d7a9b3c9640a2a6689b68e1b21452, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.CarWheel
+  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.Wheel
 --- !u!4 &7038860435595899642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7680118557601428357, guid: d29b46c218be83547aee25f3af730d8b, type: 3}
@@ -376,6 +395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6183027459371824610}
   - component: {fileID: 3391775028461937584}
+  - component: {fileID: 6027183946150283719}
   m_Layer: 7
   m_Name: CrashSensor
   m_TagString: Untagged
@@ -419,6 +439,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.3, y: 2.2936277, z: 10.108339}
   m_Center: {x: 0, y: 2.5657258, z: -0.67687607}
+--- !u!114 &6027183946150283719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804273615092837421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c8fe91996e49639792bdc783cd221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.RoofSensor
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &4493408654117027236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9ab5ce6d604eb3246a8bfe6339644ee5, type: 3}

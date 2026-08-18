@@ -192,6 +192,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851f42524b704fffa9ca8f33094c18c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.CarMover
+--- !u!114 &197151663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3170462859173026584, guid: 038593d77fefaea4790782d3ec576eab, type: 3}
+  m_PrefabInstance: {fileID: 197151660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9291fc6e54f47f4b281badfdda5c424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.CarDetacher
+--- !u!114 &197151664 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6027183946150283719, guid: 038593d77fefaea4790782d3ec576eab, type: 3}
+  m_PrefabInstance: {fileID: 197151660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c8fe91996e49639792bdc783cd221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.RoofSensor
 --- !u!1001 &385872809052349008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200,6 +222,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1143533290987536996, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
+      propertyPath: m_Size.y
+      value: 28.707752
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143533290987536996, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
+      propertyPath: m_Size.z
+      value: 1.6102152
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143533290987536996, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
+      propertyPath: m_Center.y
+      value: -11.640692
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143533290987536996, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
+      propertyPath: m_Center.z
+      value: -0.43351054
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785197855177351216, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
+      propertyPath: m_Size.y
+      value: 28.640614
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785197855177351216, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
+      propertyPath: m_Size.z
+      value: 1.6200829
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785197855177351216, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
+      propertyPath: m_Center.y
+      value: -11.674261
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785197855177351216, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
+      propertyPath: m_Center.z
+      value: 0.42858446
+      objectReference: {fileID: 0}
     - target: {fileID: 5794315330946574313, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
       propertyPath: m_Name
       value: Level_1
@@ -245,10 +299,34 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8102938475601928374, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
+    - {fileID: 5510293847561029384, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
+--- !u!114 &385872809052349009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4109283746501928374, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
+  m_PrefabInstance: {fileID: 385872809052349008}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87959c7b24f341099d55ac278eae312a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Level.CarTriggerZone
+--- !u!114 &385872809052349010 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1928374650192837466, guid: 4e6e1dd7e49853a4c92e73828ca2a659, type: 3}
+  m_PrefabInstance: {fileID: 385872809052349008}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87959c7b24f341099d55ac278eae312a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Level.CarTriggerZone
 --- !u!1001 &4049149789986593425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265,10 +343,26 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 197151661}
-    - target: {fileID: 7325098146273058164, guid: fb304ddcaa04d0049bdafddca71649fb, type: 3}
-      propertyPath: mover
+    - target: {fileID: 5518273940618253907, guid: fb304ddcaa04d0049bdafddca71649fb, type: 3}
+      propertyPath: carMover
       value: 
       objectReference: {fileID: 197151662}
+    - target: {fileID: 5518273940618253907, guid: fb304ddcaa04d0049bdafddca71649fb, type: 3}
+      propertyPath: killZone
+      value: 
+      objectReference: {fileID: 385872809052349010}
+    - target: {fileID: 5518273940618253907, guid: fb304ddcaa04d0049bdafddca71649fb, type: 3}
+      propertyPath: finishZone
+      value: 
+      objectReference: {fileID: 385872809052349009}
+    - target: {fileID: 5518273940618253907, guid: fb304ddcaa04d0049bdafddca71649fb, type: 3}
+      propertyPath: roofSensor
+      value: 
+      objectReference: {fileID: 197151664}
+    - target: {fileID: 5518273940618253907, guid: fb304ddcaa04d0049bdafddca71649fb, type: 3}
+      propertyPath: carDetacher
+      value: 
+      objectReference: {fileID: 197151663}
     - target: {fileID: 7501705526801522158, guid: fb304ddcaa04d0049bdafddca71649fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

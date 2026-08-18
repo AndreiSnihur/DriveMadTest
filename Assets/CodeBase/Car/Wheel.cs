@@ -8,6 +8,7 @@ namespace CodeBase.Car
         [SerializeField] private SphereCollider tyre;
         [SerializeField] private HingeJoint hinge;
         [SerializeField] private ConfigurableJoint suspension;
+        [SerializeField] private LooseWheel loosePrefab;
         
         public float Radius => tyre.radius;
 
@@ -39,6 +40,20 @@ namespace CodeBase.Car
             suspension.yDrive = drive;
 
             body.maxAngularVelocity = Mathf.Max(body.maxAngularVelocity, settings.MaxWheelSpeed * Mathf.Deg2Rad * 1.5f);
+        }
+
+        public void Detach(int debrisLayer)
+        {
+            hinge.useMotor = false;
+
+            for (var i = transform.childCount - 1; i >= 0; i--)
+            {
+                var visual = transform.GetChild(i);
+                var piece = Instantiate(loosePrefab, visual.position, visual.rotation, transform.parent);
+                piece.Launch(visual, body, debrisLayer);
+            }
+
+            Destroy(gameObject);
         }
 
         private void Reset()

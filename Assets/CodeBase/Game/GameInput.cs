@@ -1,5 +1,4 @@
 using System;
-using CodeBase.Car;
 using CodeBase.Input;
 using UnityEngine;
 
@@ -7,8 +6,6 @@ namespace CodeBase.Game
 {
     public sealed class GameInput : MonoBehaviour
     {
-        [SerializeField] private CarMover mover;
-
         private CarControls controls;
 
         public float Drive { get; private set; }
@@ -21,19 +18,16 @@ namespace CodeBase.Game
             controls.Car.Restart.performed += _ => RestartPressed?.Invoke();
         }
 
-        private void OnEnable() => 
+        private void OnEnable() =>
             controls.Enable();
 
-        private void OnDisable() => 
+        private void OnDisable() =>
             controls.Disable();
 
-        private void Update()
-        {
+        private void Update() =>
             Drive = controls.Car.Drive.ReadValue<float>();
-            mover.DriveInput = Drive;
-        }
 
-        private void OnDestroy() => 
+        private void OnDestroy() =>
             controls.Dispose();
     }
 }
