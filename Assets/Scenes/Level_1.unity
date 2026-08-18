@@ -181,6 +181,17 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 1828940512666948549, guid: 038593d77fefaea4790782d3ec576eab, type: 3}
   m_PrefabInstance: {fileID: 197151660}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &197151662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9014725836190273645, guid: 038593d77fefaea4790782d3ec576eab, type: 3}
+  m_PrefabInstance: {fileID: 197151660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851f42524b704fffa9ca8f33094c18c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.CarMover
 --- !u!1001 &385872809052349008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -254,6 +265,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 197151661}
+    - target: {fileID: 7325098146273058164, guid: fb304ddcaa04d0049bdafddca71649fb, type: 3}
+      propertyPath: mover
+      value: 
+      objectReference: {fileID: 197151662}
     - target: {fileID: 7501705526801522158, guid: fb304ddcaa04d0049bdafddca71649fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

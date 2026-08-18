@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 84e821728ef12254d97f44094c44de1a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 84e821728ef12254d97f44094c44de1a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1c1a071007e0b464aa39e6be1285780b, type: 2}
     - target: {fileID: 919132149155446097, guid: 84e821728ef12254d97f44094c44de1a, type: 3}
       propertyPath: m_Name
-      value: SuspensionFront
+      value: Suspension
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 84e821728ef12254d97f44094c44de1a, type: 3}
       propertyPath: m_Layer
