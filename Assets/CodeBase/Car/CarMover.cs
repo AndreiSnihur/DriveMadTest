@@ -13,8 +13,6 @@ namespace CodeBase.Car
 
         public float DriveInput { get; set; }
 
-        public Rigidbody Chassis => chassis;
-
         private Vector3 Forward =>
             -chassis.transform.forward;
 
