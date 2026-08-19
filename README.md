@@ -15,9 +15,6 @@ WebGL-билд: **https://andreisnihur.github.io/DriveMadTest/** (ветка `gh
   без настройки заголовков `Content-Encoding`; шаблон Minimal, имена файлов — хэши, Managed Stripping Medium.
 - Android: ARM64, Managed Stripping Medium.
 - Рендер: URP `Mobile_RPAsset` для WebGL/мобилок, `PC_RPAsset` для десктопа; тени, HDR и постпроцессинг выключены.
-- Локальный запуск WebGL-билда: только через HTTP (`file://` даёт «Script error»), например из папки билда
-  `python -m http.server 8080` → http://localhost:8080. Обновить Pages: собрать в `Builds/`, затем
-  `git checkout --orphan gh-pages && git rm -rf . && cp -r Builds/* . && touch .nojekyll && git add -A && git commit -m "Deploy" && git push -f origin gh-pages`.
 
 ## Управление
 - Клавиатура: `D` / `→` — вперёд, `A` / `←` — назад, `R` / `Space` — рестарт
@@ -39,9 +36,6 @@ WebGL-билд: **https://andreisnihur.github.io/DriveMadTest/** (ветка `gh
   (`Track_chunk_01` ×2, `Slope` из `Ramp` ×9, ворота `Start_Finish` ×2, триггеры финиша / kill-зоны),
   `System` (камера, свет, ввод, HUD)
 - `Assets/Settings/CarSettings.asset` — настройки машины, `Assets/PhysicsMaterials` — `Wheel`, `Chassis`
-
-Коллайдеры ворот старта и финиша перекрывают трассу и работают как стены: назад со старта не уехать,
-на финише машина упирается в ворота.
 
 ## Физическая модель
 2D-в-3D: машина едет вдоль **−Z**; у всех Rigidbody машины заморожены позиция по X и вращение по Y/Z.
