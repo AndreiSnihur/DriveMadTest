@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859079e50eb44c92ba5f1ae60f129dde, type: 3}
   m_Name: CarSettings
   m_EditorClassIdentifier: Assembly-CSharp::CodeBase.Car.CarSettings
-  gravity: 30
+  gravity: 40
   motorTorque: 800
   maxWheelSpeed: 2500
   chassisMass: 4

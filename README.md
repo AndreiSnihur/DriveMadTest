@@ -2,6 +2,9 @@
 
 Клон первого уровня Drive Mad с упором на ощущение физики машины. Unity 6000.3.22f1 (URP), Input System, uGUI + TextMeshPro.
 
+## Играть онлайн
+WebGL-билд: **https://andreisnihur.github.io/DriveMadTest/** (ветка `gh-pages`, GitHub Pages).
+
 ## Запуск
 1. Открыть корень проекта в Unity 6000.3.x.
 2. Открыть `Assets/Scenes/Level_1.unity`, нажать Play. Для портретной раскладки поставить Game view в 9:16.
@@ -9,8 +12,12 @@
 ## Сборка
 - Ориентация зафиксирована в Portrait (HUD и камера настроены под 9:16); дефолтный размер WebGL-канваса 540×960.
 - WebGL: Gzip + Decompression Fallback — билд грузится с любого статического хостинга (GitHub Pages, itch.io)
-  без настройки заголовков `Content-Encoding`.
-- Android: ARM64, URP-ассет `Mobile_RPAsset`.
+  без настройки заголовков `Content-Encoding`; шаблон Minimal, имена файлов — хэши, Managed Stripping Medium.
+- Android: ARM64, Managed Stripping Medium.
+- Рендер: URP `Mobile_RPAsset` для WebGL/мобилок, `PC_RPAsset` для десктопа; тени, HDR и постпроцессинг выключены.
+- Локальный запуск WebGL-билда: только через HTTP (`file://` даёт «Script error»), например из папки билда
+  `python -m http.server 8080` → http://localhost:8080. Обновить Pages: собрать в `Builds/`, затем
+  `git checkout --orphan gh-pages && git rm -rf . && cp -r Builds/* . && touch .nojekyll && git add -A && git commit -m "Deploy" && git push -f origin gh-pages`.
 
 ## Управление
 - Клавиатура: `D` / `→` — вперёд, `A` / `←` — назад, `R` / `Space` — рестарт
