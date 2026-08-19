@@ -34,7 +34,7 @@ namespace CodeBase.Cameras
         {
             var localRotation = Rotation;
             var lookAhead = Mathf.Clamp(-target.linearVelocity.z * lookAheadTime, -maxLookAhead, maxLookAhead);
-            var focus = target.position + localRotation * focusOffset + Vector3.back * lookAhead;
+            var focus = target.transform.position + localRotation * focusOffset + Vector3.back * lookAhead;
             return focus - localRotation * Vector3.forward * distance;
         }
     }

@@ -2,8 +2,9 @@
 
 Клон первого уровня Drive Mad с упором на ощущение физики машины. Unity 6000.3.22f1 (URP), Input System, uGUI + TextMeshPro.
 
-## Играть онлайн
-WebGL-билд: **https://andreisnihur.github.io/DriveMadTest/** (ветка `gh-pages`, GitHub Pages).
+## Билды
+- WebGL: **https://andreisnihur.github.io/DriveMadTest/** (ветка `gh-pages`, GitHub Pages).
+- Android: [`Builds/DM_0.1.apk`](Builds/DM_0.1.apk) (ARM64).
 
 ## Запуск
 1. Открыть корень проекта в Unity 6000.3.x.
@@ -13,7 +14,8 @@ WebGL-билд: **https://andreisnihur.github.io/DriveMadTest/** (ветка `gh
 - Ориентация зафиксирована в Portrait (HUD и камера настроены под 9:16); дефолтный размер WebGL-канваса 540×960.
 - WebGL: Gzip + Decompression Fallback — билд грузится с любого статического хостинга (GitHub Pages, itch.io)
   без настройки заголовков `Content-Encoding`; шаблон Minimal, имена файлов — хэши, Managed Stripping Medium.
-- Android: ARM64, Managed Stripping Medium.
+- Android: ARM64, IL2CPP, Managed Stripping Medium, Optimized Frame Pacing. На мобильных `FrameRateSetup` выставляет
+  `Application.targetFrameRate` по частоте дисплея (иначе Unity на Android рендерит в 30 FPS); на WebGL остаётся rAF браузера.
 - Рендер: URP `Mobile_RPAsset` для WebGL/мобилок, `PC_RPAsset` для десктопа; тени, HDR и постпроцессинг выключены.
 
 ## Управление
@@ -27,7 +29,8 @@ WebGL-билд: **https://andreisnihur.github.io/DriveMadTest/** (ветка `gh
 ## Структура
 - `Assets/CodeBase/Car` — `CarMover` (мотор), `Wheel` (мотор хинджа, подвеска, отстрел), `CarDetacher` (краш),
   `RoofSensor`, `LooseWheel` (обломок колеса), `CarSettings` (весь тюнинг, ScriptableObject)
-- `Assets/CodeBase/Game` — `LevelController` (победа / поражение / рестарт), `GameInput` (обёртка Input System)
+- `Assets/CodeBase/Game` — `LevelController` (победа / поражение / рестарт), `GameInput` (обёртка Input System),
+  `FrameRateSetup` (частота кадров на мобильных)
 - `Assets/CodeBase/Level` — `CarTriggerZone` (финиш / kill-зона)
 - `Assets/CodeBase/Cameras` — `CameraFollower`
 - `Assets/CodeBase/UI` — `HudView` (статус, тач-кнопки)

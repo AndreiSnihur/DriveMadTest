@@ -10,7 +10,7 @@
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
-/[Bb]uilds/
+/[Bb]uilds/*
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 *.log
@@ -109,3 +109,6 @@ InitTestScene*.unity*
 
 # Generated transiently by com.unity.test-framework.performance during builds
 /[Aa]ssets/[Rr]esources/PerformanceTestRun*
+
+# Shipped Android build
+!/[Bb]uilds/DM_0.1.apk
