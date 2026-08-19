@@ -19,7 +19,8 @@ namespace CodeBase.Game
         [SerializeField] private CarTriggerZone killZone;
         [SerializeField] private HudView hud;
         
-        [SerializeField, Min(0f)] private float autoRestartDelay;
+        [SerializeField, Min(0f)] private float winRestartDelay;
+        [SerializeField, Min(0f)] private float loseRestartDelay;
 
         private State state = State.Playing;
 
@@ -49,6 +50,7 @@ namespace CodeBase.Game
 
             state = State.Won;
             hud.ShowWin();
+            StartCoroutine(RestartAfterDelay(winRestartDelay));
         }
 
         private void Lose()
@@ -59,12 +61,12 @@ namespace CodeBase.Game
             state = State.Lost;
             carDetacher.Detach();
             hud.ShowLose();
-            StartCoroutine(RestartAfterDelay());
+            StartCoroutine(RestartAfterDelay(loseRestartDelay));
         }
 
-        private IEnumerator RestartAfterDelay()
+        private IEnumerator RestartAfterDelay(float delay)
         {
-            yield return new WaitForSeconds(autoRestartDelay);
+            yield return new WaitForSeconds(delay);
             Restart();
         }
 

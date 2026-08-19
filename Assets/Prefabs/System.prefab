@@ -793,7 +793,8 @@ MonoBehaviour:
   finishZone: {fileID: 0}
   killZone: {fileID: 0}
   hud: {fileID: 9049615671090146583}
-  autoRestartDelay: 1
+  winRestartDelay: 3
+  loseRestartDelay: 1
 --- !u!1 &5348500958976910684
 GameObject:
   m_ObjectHideFlags: 0
