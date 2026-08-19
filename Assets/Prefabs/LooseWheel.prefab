@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8291047365018273649}
   - component: {fileID: 3746501928374650193}
   - component: {fileID: 6019283746501928376}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LooseWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

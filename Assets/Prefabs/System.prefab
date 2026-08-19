@@ -314,7 +314,7 @@ Transform:
   m_GameObject: {fileID: 1993677959801398956}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13912469, y: 0.7478862, z: -0.16580234, w: 0.627551}
-  m_LocalPosition: {x: -10, y: 20, z: 0}
+  m_LocalPosition: {x: -10, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CodeBase.System.CameraFollower
   target: {fileID: 0}
   rotation: {x: 25, y: 100, z: 0}
-  focusOffset: {x: 0, y: 0, z: 0}
+  focusOffset: {x: 5, y: 10, z: 0}
   distance: 65
   smoothTime: 0.15
   lookAheadTime: 0.3

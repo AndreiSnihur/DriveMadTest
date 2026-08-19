@@ -19,12 +19,16 @@
   `RoofSensor`, `LooseWheel` (обломок колеса), `CarSettings` (весь тюнинг, ScriptableObject)
 - `Assets/CodeBase/Game` — `LevelController` (победа / поражение / рестарт), `GameInput` (обёртка Input System)
 - `Assets/CodeBase/Level` — `CarTriggerZone` (финиш / kill-зона)
-- `Assets/CodeBase/System` — `CameraFollower`
+- `Assets/CodeBase/Cameras` — `CameraFollower`
 - `Assets/CodeBase/UI` — `HudView` (статус, тач-кнопки)
 - `Assets/CodeBase/Input` — `CarControls.cs`, генерируется из `Assets/Input/CarControls.inputactions`
-- `Assets/Prefabs` — `Car` (кузов + `Suspension` ×2 + `WheelPairFront` ×2), `LooseWheel`, `Level_1`
-  (`Track_chunk_01`, `Ramp`, `Start_Finish`, триггеры финиша / kill-зоны, стены в начале и конце), `System` (камера, свет, ввод, HUD)
+- `Assets/Prefabs` — `Car` (кузов + `Suspension` ×2 + `WheelPair` ×2), `LooseWheel`, `Level_1`
+  (`Track_chunk_01` ×2, `Slope` из `Ramp` ×9, ворота `Start_Finish` ×2, триггеры финиша / kill-зоны),
+  `System` (камера, свет, ввод, HUD)
 - `Assets/Settings/CarSettings.asset` — настройки машины, `Assets/PhysicsMaterials` — `Wheel`, `Chassis`
+
+Коллайдеры ворот старта и финиша перекрывают трассу и работают как стены: назад со старта не уехать,
+на финише машина упирается в ворота.
 
 ## Физическая модель
 2D-в-3D: машина едет вдоль **−Z**; у всех Rigidbody машины заморожены позиция по X и вращение по Y/Z.
@@ -32,9 +36,12 @@
 на моторизованных `HingeJoint` (ось X). Реакция момента колёс естественно наклоняет кузов (вилли, стоппи, перевороты).
 Коллайдер кузова — два бокса (корпус + кабина); триггер на крыше (`RoofSensor`) фиксирует приземление на крышу.
 
-Слои: `Ground` 6 (трасса), `Car` 7 (все части машины, коллизии Car×Car выключены), `Debris` 8 (отстреленные колёса).
+Слои: `Ground` 6 (трасса), `Car` 7 (все части машины, коллизии Car×Car выключены), `Debris` 8 (отстреленные колёса;
+`LooseWheel` лежит на этом слое, а в момент отстрела ненадолго берёт слой машины, чтобы не выстрелить из-под кузова).
 
 ## Тюнинг
-Все параметры лежат в `Assets/Settings/CarSettings.asset` и применяются на лету в Play Mode: гравитация, момент мотора,
+Все параметры машины лежат в `Assets/Settings/CarSettings.asset` и применяются на лету в Play Mode: момент мотора,
 максимальная скорость колёс, масса / центр масс / угловое затухание кузова, масса и инерция вращения колёс,
-пружина и демпфер подвески. Задержки рестарта после победы / поражения — на `LevelController` в префабе `System`.
+пружина и демпфер подвески. Значения в префабах синхронизированы с ассетом, но в рантайме источник правды — ассет.
+Гравитация (30, мир увеличен относительно реального масштаба) — Project Settings → Physics → Gravity.
+Задержки рестарта после победы / поражения — на `LevelController` в префабе `System`.

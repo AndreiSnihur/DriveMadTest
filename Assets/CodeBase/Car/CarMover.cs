@@ -63,8 +63,6 @@ namespace CodeBase.Car
 
         private void ApplySettings()
         {
-            Physics.gravity = Vector3.down * settings.Gravity;
-
             chassis.mass = settings.ChassisMass;
             chassis.angularDamping = settings.ChassisAngularDamping;
             chassis.centerOfMass = settings.CenterOfMass;

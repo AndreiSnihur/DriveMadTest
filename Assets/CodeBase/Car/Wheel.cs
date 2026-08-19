@@ -42,7 +42,7 @@ namespace CodeBase.Car
             body.maxAngularVelocity = Mathf.Max(body.maxAngularVelocity, settings.MaxWheelSpeed * Mathf.Deg2Rad * 1.5f);
         }
 
-        public void Detach(int debrisLayer)
+        public void Detach()
         {
             hinge.useMotor = false;
 
@@ -50,7 +50,7 @@ namespace CodeBase.Car
             {
                 var visual = transform.GetChild(i);
                 var piece = Instantiate(loosePrefab, visual.position, visual.rotation, transform.parent);
-                piece.Launch(visual, body, debrisLayer);
+                piece.Launch(visual, body);
             }
 
             Destroy(gameObject);

@@ -8,7 +8,7 @@ namespace CodeBase.Car
         [SerializeField] private Rigidbody body;
         [SerializeField, Min(0f)] private float debrisLayerDelay;
 
-        public void Launch(Transform visual, Rigidbody source, int debrisLayer)
+        public void Launch(Transform visual, Rigidbody source)
         {
             visual.SetParent(transform, true);
 
@@ -16,11 +16,14 @@ namespace CodeBase.Car
             body.linearVelocity = source.linearVelocity;
             body.angularVelocity = source.angularVelocity;
 
-            StartCoroutine(SwitchLayer(debrisLayer));
+            StartCoroutine(SwitchLayer(source.gameObject.layer, gameObject.layer));
         }
 
-        private IEnumerator SwitchLayer(int debrisLayer)
+        // Spawns on the car's layer so it doesn't get kicked out of the chassis,
+        // then returns to its own (Debris) layer once clear of the body.
+        private IEnumerator SwitchLayer(int spawnLayer, int debrisLayer)
         {
+            SetLayerRecursively(transform, spawnLayer);
             yield return new WaitForSeconds(debrisLayerDelay);
             SetLayerRecursively(transform, debrisLayer);
         }

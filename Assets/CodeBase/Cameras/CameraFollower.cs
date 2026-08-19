@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.System
+namespace CodeBase.Cameras
 {
     public sealed class CameraFollower : MonoBehaviour
     {
