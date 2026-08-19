@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3746501928374650192}
   - component: {fileID: 9182736450192837465}
   - component: {fileID: 1928374650192837466}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: KillZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 2039485716283940517}
   - component: {fileID: 8830192837465019283}
   - component: {fileID: 4109283746501928374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FinishTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,11 +1,11 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace CodeBase.UI
 {
     public sealed class HudView : MonoBehaviour
     {
-        [SerializeField] private Text statusLabel;
+        [SerializeField] private TextMeshProUGUI statusLabel;
         [SerializeField] private string winText;
         [SerializeField] private string loseText;
 

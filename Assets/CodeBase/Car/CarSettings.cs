@@ -6,6 +6,9 @@ namespace CodeBase.Car
     [CreateAssetMenu(menuName = "Drive Mad/Car Settings", fileName = "CarSettings")]
     public sealed class CarSettings : ScriptableObject
     {
+        [Header("World")]
+        [SerializeField, Min(0f)] private float gravity = 30f;
+
         [Header("Motor")]
         [SerializeField, Min(0f)] private float motorTorque = 800f;
         [SerializeField, Min(0f)] private float maxWheelSpeed = 2500f;
@@ -23,6 +26,7 @@ namespace CodeBase.Car
         [SerializeField, Min(0f)] private float suspensionSpring = 80f;
         [SerializeField, Min(0f)] private float suspensionDamper = 4f;
 
+        public float Gravity => gravity;
         public float MotorTorque => motorTorque;
         public float MaxWheelSpeed => maxWheelSpeed;
         public float ChassisMass => chassisMass;

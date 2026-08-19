@@ -19,8 +19,6 @@ namespace CodeBase.Car
             StartCoroutine(SwitchLayer(source.gameObject.layer, gameObject.layer));
         }
 
-        // Spawns on the car's layer so it doesn't get kicked out of the chassis,
-        // then returns to its own (Debris) layer once clear of the body.
         private IEnumerator SwitchLayer(int spawnLayer, int debrisLayer)
         {
             SetLayerRecursively(transform, spawnLayer);
